@@ -10,9 +10,9 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\Factory;
+namespace Usyme\ResourceBundle\Factory;
 
-use Usyme\ResourceBundle\ResourceBundle\Model\ResourceInterface;
+use Usyme\ResourceBundle\Model\ResourceInterface;
 
 class ResourceFactory implements FactoryInterface
 {

@@ -10,12 +10,12 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\DependencyInjection\Compiler;
+namespace Usyme\ResourceBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
-use Usyme\ResourceBundle\ResourceBundle\Factory\ResourceFactory;
+use Usyme\ResourceBundle\Factory\ResourceFactory;
 
 class ResourceRegistryPass extends ResourceConfigurationProcessor implements CompilerPassInterface
 {

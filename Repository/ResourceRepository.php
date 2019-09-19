@@ -10,13 +10,13 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\Repository;
+namespace Usyme\ResourceBundle\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\QueryBuilder;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\Pagerfanta;
-use Usyme\ResourceBundle\ResourceBundle\Model\ResourceInterface;
+use Usyme\ResourceBundle\Model\ResourceInterface;
 
 class ResourceRepository extends ServiceEntityRepository implements RepositoryInterface
 {

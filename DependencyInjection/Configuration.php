@@ -10,11 +10,11 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\DependencyInjection;
+namespace Usyme\ResourceBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use Usyme\ResourceBundle\ResourceBundle\Factory\ResourceFactory;
+use Usyme\ResourceBundle\Factory\ResourceFactory;
 
 class Configuration implements ConfigurationInterface
 {

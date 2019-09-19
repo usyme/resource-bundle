@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\Model;
+namespace Usyme\ResourceBundle\Model;
 
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;

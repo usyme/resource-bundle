@@ -14,7 +14,7 @@ namespace Usyme\ResourceBundle\ResourceBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Usyme\ResourceBundle\ResourceBundle\DependencyInjection\Compiler\ResourceRegistryPass;
+use Usyme\ResourceBundle\DependencyInjection\Compiler\ResourceRegistryPass;
 
 class UsymeResourceBundle extends Bundle
 {

@@ -10,10 +10,10 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\Repository;
+namespace Usyme\ResourceBundle\Repository;
 
 use Doctrine\Common\Persistence\ObjectRepository;
-use Usyme\ResourceBundle\ResourceBundle\Model\ResourceInterface;
+use Usyme\ResourceBundle\Model\ResourceInterface;
 
 interface RepositoryInterface extends ObjectRepository
 {

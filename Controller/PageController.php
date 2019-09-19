@@ -10,10 +10,8 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\Controller;
+namespace Usyme\ResourceBundle\Controller;
 
-use App\Entity\Post;
-use App\Factory\PostFactory;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 

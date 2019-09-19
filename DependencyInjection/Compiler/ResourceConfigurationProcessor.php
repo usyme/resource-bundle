@@ -10,11 +10,11 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle\DependencyInjection\Compiler;
+namespace Usyme\ResourceBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Usyme\ResourceBundle\ResourceBundle\DependencyInjection\Configuration;
+use Usyme\ResourceBundle\DependencyInjection\Configuration;
 
 class ResourceConfigurationProcessor
 {
