@@ -1,0 +1,36 @@
+{
+  "name": "usyme/resource-bundle",
+  "type": "symfony-bundle",
+  "description": "This Bundle provides various tools to rapidly develop doctrine scalable entities with Symfony",
+  "keywords": [
+    "entity",
+    "resource",
+    "factory"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mohamed Radhi Guennichi",
+      "email": "radhi@mate.tn"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Usyme\\ResourceBundle\\": ""
+    }
+  },
+  "require": {
+    "php": "~7.2",
+    "symfony/config": "^3.4|^4.0",
+    "symfony/debug": "^3.4|^4.0",
+    "symfony/dependency-injection": "^3.4|^4.0",
+    "symfony/event-dispatcher": "^3.4|^4.0",
+    "symfony/finder": "^3.4|^4.0",
+    "symfony/framework-bundle": "^3.4|^4.0",
+    "symfony/http-foundation": "^3.4|^4.0",
+    "symfony/http-kernel": "^3.4|^4.0",
+    "symfony/orm-pack": "^1.0",
+    "stof/doctrine-extensions-bundle": "dev-master",
+    "pagerfanta/pagerfanta": "^2.1"
+  }
+}
