@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-namespace Usyme\ResourceBundle\ResourceBundle;
+namespace Usyme\ResourceBundle;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
