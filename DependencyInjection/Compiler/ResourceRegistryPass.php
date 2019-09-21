@@ -28,11 +28,35 @@ class ResourceRegistryPass extends ResourceConfigurationProcessor implements Com
 
         foreach ($config['resources'] as $resource => $metadata) {
             $classes = $metadata['classes'];
-            // Build factories
+            // Build factory
             $this->registerFactory($container, $resource, $classes);
-            // Build repositories
+            // Build repository
             $this->registerRepository($container, $resource, $classes);
+            // Build manager
+            $this->registerManager($container, $resource, $classes);
         }
+    }
+
+    /**
+     * @param ContainerBuilder $container
+     * @param string           $resource
+     * @param array            $classes
+     */
+    public function registerManager(ContainerBuilder $container, string $resource, array $classes): void
+    {
+        if (!array_key_exists('manager', $classes)) {
+            return;
+        }
+
+        $managerId = sprintf('usyme.resources.%s.manager', $resource);
+
+        $container
+            ->register($managerId, $classes['manager'])
+            ->addMethodCall('setEntityManager', [new Reference('doctrine.orm.entity_manager')])
+            ->addMethodCall('setRepository', [new Reference($classes['repository'])])
+            ->addMethodCall('setFactory', [new Reference($classes['factory'])]);
+
+        $container->setAlias($classes['manager'], $managerId);
     }
 
     /**

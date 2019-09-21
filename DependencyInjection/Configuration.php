@@ -43,6 +43,7 @@ class Configuration implements ConfigurationInterface
                                     ->scalarNode('model')->isRequired()->cannotBeEmpty()->end()
                                     ->scalarNode('factory')->defaultValue(ResourceFactory::class)->end()
                                     ->scalarNode('repository')->isRequired()->cannotBeEmpty()->end()
+                                    ->scalarNode('manager')->cannotBeEmpty()->end()
                                 ->end()
                             ->end()
                         ->end()
