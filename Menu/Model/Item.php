@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace Usyme\ResourceBundle\Menu\Model;
 
+use Usyme\ResourceBundle\Menu\Helper\Str;
+
 class Item
 {
     /**
@@ -44,6 +46,16 @@ class Item
     public function isActive(string $currentRoute): bool
     {
         $routes = $this->getRoutes();
+
+        foreach ($routes as $route) {
+            if (strpos($route, '*') !== false) {
+                $partName = str_replace('*', '', $route);
+
+                if (Str::startsWith($currentRoute, $partName)) {
+                    return true;
+                }
+            }
+        }
 
         foreach ($this->getChildren() as $child) {
             $routes = array_merge($routes, $child->getRoutes());
