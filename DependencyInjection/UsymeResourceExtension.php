@@ -12,8 +12,11 @@ declare(strict_types=1);
 
 namespace Usyme\ResourceBundle\DependencyInjection;
 
+use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Usyme\ResourceBundle\Menu\MenuBuilderInterface;
 
 class UsymeResourceExtension extends Extension
 {
@@ -22,7 +25,13 @@ class UsymeResourceExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        $loader->load('menu.xml');
+
         // We'll use this method later to handle some prebuilt services depending
         // on the app configurations.
+        $container->registerForAutoconfiguration(MenuBuilderInterface::class)
+            ->addTag('usyme_resource.menu.builder')
+            ->setAutowired(true);
     }
 }

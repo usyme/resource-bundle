@@ -19,14 +19,23 @@ use Usyme\ResourceBundle\DependencyInjection\Configuration;
 class ResourceConfigurationProcessor
 {
     /**
+     * @var array
+     */
+    protected $configuration;
+
+    /**
      * @param ContainerBuilder $container
      *
      * @return array
      */
     public function processConfiguration(ContainerBuilder $container): array
     {
-        $processor = new Processor();
+        if (null === $this->configuration) {
+            $processor = new Processor();
 
-        return $processor->processConfiguration(new Configuration(), $container->getExtensionConfig('usyme_resource'));
+            $this->configuration = $processor->processConfiguration(new Configuration(), $container->getExtensionConfig('usyme_resource'));
+        }
+
+        return $this->configuration;
     }
 }

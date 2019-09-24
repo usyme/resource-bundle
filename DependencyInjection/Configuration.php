@@ -33,6 +33,10 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->arrayNode('menus')
+                    ->useAttributeAsKey('name')
+                    ->prototype('scalar')->end()
+                ->end()
                 ->arrayNode('resources')
                     ->useAttributeAsKey('name')
                     ->arrayPrototype()

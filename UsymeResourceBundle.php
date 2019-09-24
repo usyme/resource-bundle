@@ -15,6 +15,7 @@ namespace Usyme\ResourceBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Usyme\ResourceBundle\DependencyInjection\Compiler\ResourceRegistryPass;
+use Usyme\ResourceBundle\DependencyInjection\Compiler\TwigMenuBuilderPass;
 
 class UsymeResourceBundle extends Bundle
 {
@@ -24,5 +25,6 @@ class UsymeResourceBundle extends Bundle
     public function build(ContainerBuilder $container)
     {
         $container->addCompilerPass(new ResourceRegistryPass());
+        $container->addCompilerPass(new TwigMenuBuilderPass());
     }
 }
