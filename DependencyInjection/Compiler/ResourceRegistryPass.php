@@ -54,7 +54,8 @@ class ResourceRegistryPass extends ResourceConfigurationProcessor implements Com
             ->register($managerId, $classes['manager'])
             ->addMethodCall('setEntityManager', [new Reference('doctrine.orm.entity_manager')])
             ->addMethodCall('setRepository', [new Reference($classes['repository'])])
-            ->addMethodCall('setFactory', [new Reference($classes['factory'])]);
+            ->addMethodCall('setFactory', [new Reference($classes['factory'])])
+            ->setAutowired(true);
 
         $container->setAlias($classes['manager'], $managerId);
     }
