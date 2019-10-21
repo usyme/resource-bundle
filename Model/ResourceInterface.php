@@ -17,7 +17,7 @@ interface ResourceInterface
     /**
      * Get the resource ID.
      *
-     * @return int
+     * @return int|string
      */
-    public function getId(): ?int;
+    public function getId();
 }
