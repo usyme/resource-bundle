@@ -78,7 +78,7 @@ class ResourceRegistryPass extends ResourceConfigurationProcessor implements Com
 
             $container
                 ->register($factoryId, $classes['factory'])
-                ->addArgument(new Reference($baseFactoryId))
+                ->addMethodCall('setFactory', [new Reference($baseFactoryId)])
                 ->setAutowired(true);
 
             $container->setAlias($classes['factory'], $factoryId);
